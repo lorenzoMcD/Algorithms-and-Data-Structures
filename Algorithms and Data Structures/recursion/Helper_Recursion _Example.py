@@ -1,5 +1,6 @@
 ## helper function example
 
+##### NOTE NOT FINISHED DEVELOPING THIS FUNCTION####
 
 ## write a function that takes in a list of values and returns odd values
 
