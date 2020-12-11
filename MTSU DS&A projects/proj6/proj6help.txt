@@ -1,0 +1,25 @@
+-------------------- code to transform string to lowercase
+ 
+//transforms a string to lowercase - must include <algorithm>
+// text is a string
+std::transform(text.begin(), text.end(), text.begin(), ::tolower);
+
+
+-------------------- function to split a string with a delimiter and load individual tokens into a string vector
+
+// From book "C++ Cookbook" by Jeff Cogswell, Jonathan Turkanis, Christopher Diggins, D. Ryan Stephens
+// Splits a string s, using character c as a delimeter, and places individual words into a vector of strings
+void split(const std::string& s, char c, std::vector<std::string>& v) {
+
+   std::string::size_type i = 0;
+   std::string::size_type j = s.find(c);
+
+   while (j != std::string::npos) {
+      v.push_back(s.substr(i, j-i));
+      i = ++j;
+      j = s.find(c, j);
+
+      if (j == std::string::npos)
+         v.push_back(s.substr(i, s.length()));
+   }
+}
